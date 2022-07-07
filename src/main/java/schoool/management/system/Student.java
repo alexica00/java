@@ -40,8 +40,9 @@ public class Student {
         this.grade = grade;
     }
 
-    public void updateFeesPaid(int fees){
+    public void payFees(int fees){
         this.feesPaid += fees;
+        School.updateTotalMoneyEarned(fees);
     }
 
     public int getFeesPaid() {
@@ -58,5 +59,9 @@ public class Student {
 
     public void setFeesTotal(int feesTotal) {
         this.feesTotal = feesTotal;
+    }
+    // remainig fees
+    public int getRemainingFees(){
+        return feesTotal - feesPaid;
     }
 }

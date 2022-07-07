@@ -21,8 +21,26 @@ public class Main {
         Teacher Melissa = new Teacher(2,"Melissa",700);
         Teacher Vanderhorn = new Teacher(3,"Vanderhorn",600);
 
+        List<Teacher> teacherList = new ArrayList<>();
+        teacherList.add(Lizzy);
+        teacherList.add(Melissa);
+        teacherList.add(Vanderhorn);
+
         Student Alexica = new Student(1,"Alex",20);
         Student David = new Student(2,"David",14);
+
+        List<Student> studentList = new ArrayList<>();
+        studentList.add(Alexica);
+        studentList.add(David);
+
+        School school = new School(teacherList,studentList);
+
+        Alexica.payFees(1000);
+        System.out.println(" ---> school.getTotalMoneyEarned()="+school.getTotalMoneyEarned());
+
+        for (Student stu : studentList){
+            System.out.println(stu.getName());
+        }
 
     }
 }
